@@ -9,6 +9,14 @@
     <script nomodule src="/build/stencil-starter-project-name.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <my-component id="mc" first="stencil" last="'Don't call me a framework' JS"></my-component>
+
+    <script>
+      const mc = document.getElementById('mc');
+
+      setInterval(() => mc.first = mc.first === 'stencil' ?
+                                   mc.first.toUpperCase() :
+                                   mc.first.toLowerCase(), 1000);
+    </script>
   </body>
 </html>
